@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vista de Bienvenida</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <div id="encabezado"></div>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="bienvenida">
+
+        <h1>¡Bienvenidos!</h1>
+
+        <p>
+            Bienvenidos a la página principal.
+        </p>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <div id="pie"></div>
+
+
+    <script>
+
+        // Cargar encabezado
+        fetch("public/encabezado.php")
+            .then(respuesta => respuesta.text())
+            .then(datos => {
+                document.getElementById("encabezado").innerHTML = datos;
+            });
+
+
+        // Cargar pie de página
+        fetch("public/pie.php")
+            .then(respuesta => respuesta.text())
+            .then(datos => {
+                document.getElementById("pie").innerHTML = datos;
+            });
+
+    </script>
+
+</body>
+
+</html>
